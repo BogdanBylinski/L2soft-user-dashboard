@@ -1,0 +1,10 @@
+@import "../../variables/vars";
+.homeContainer {
+  // .loginContainer__logo
+  width: 100%;
+
+  display: flex;
+  background-color: $mainColor;
+  padding: 60px 30px;
+  gap: $sizeSmall;
+}

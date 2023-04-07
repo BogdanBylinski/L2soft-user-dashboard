@@ -1,0 +1,43 @@
+@import "../../variables/vars";
+.verifyContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  gap: $sizeXS;
+  p {
+    padding: $sizeSmall;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    min-width: 100%;
+    min-height: $sizeXXL;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: #e77418;
+    background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    line-height: 18px;
+    color: #000;
+    outline: 0 !important;
+    font-weight: 700;
+    border: 1px solid #e77418;
+    &:hover {
+      background: 0 0;
+      cursor: pointer;
+
+      border: 1px solid #e77418;
+      color: #fff;
+      font-weight: 400;
+    }
+  }
+}

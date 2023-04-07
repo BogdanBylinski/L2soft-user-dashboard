@@ -1,0 +1,185 @@
+@import "../../variables/vars";
+.loginContainer {
+  // .loginContainer__logo
+  width: 100vw;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $mainColor;
+}
+.loginCard {
+  width: 400px;
+  padding: $paddingMedium;
+  background-color: $mainColorLight;
+  //   padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-radius: 8px;
+  min-height: 360px;
+  display: flex;
+  gap: $sizeMedium;
+  flex-direction: column;
+
+  @include devices(tablet) {
+    width: 300px;
+    padding: 10px;
+  }
+  @include devices(mobile) {
+  }
+  &__container {
+    background-color: transparent;
+
+    &-logo {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      gap: $sizeSmall;
+      img {
+        height: 60px;
+        width: 60px;
+      }
+      p {
+        font-size: $fontSizeXXL;
+        letter-spacing: 5px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    // .loginContainer__form
+
+    &-form {
+      // .loginContainer__links
+      path {
+        color: rgba(255, 255, 255, 0.625);
+      }
+      background-color: transparent;
+      .form-group {
+        position: relative;
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+          &:focus + label {
+            //   transform: translate(0%, -100%);
+            display: none;
+          }
+          &:not(:placeholder-shown) + label {
+            //   transform: translate(0%, -100%);
+            display: none;
+          }
+          &:placeholder-shown + label {
+            display: block;
+          }
+          &:-webkit-autofill + label,
+          &:-webkit-autofill:hover + label,
+          &:-webkit-autofill:focus + label {
+            display: none;
+          }
+        }
+
+        label {
+          padding: 0 $sizeXS;
+          position: absolute;
+          background-color: $mainColorLight;
+          top: 0;
+          left: 0;
+          font-size: $sizeXS;
+          transform: translate(30px, -50%);
+          color: rgba(255, 255, 255, 0.625);
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        min-width: 100%;
+        min-height: $sizeXXL;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        background: #e77418;
+        background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+        box-sizing: border-box;
+        flex-shrink: 0;
+        position: relative;
+        padding: 10px 20px;
+        border-radius: 7px;
+        line-height: 18px;
+        color: #000;
+        outline: 0 !important;
+        font-weight: 700;
+        border: 1px solid #e77418;
+        &:hover {
+          background: 0 0;
+          border: 1px solid #e77418;
+          color: #fff;
+          font-weight: 400;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-links {
+      margin-top: $marginMedium;
+      padding: 0 $paddingSmall;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        border: none;
+        text-decoration: none;
+        background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        &:hover {
+          //   border-bottom: 1px solid orange;
+          background: linear-gradient(0deg, rgb(189, 55, 45) 0, #eecc2d 90%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background-color: transparent;
+  display: block;
+  font-size: $fontSizeSmall;
+  font-weight: 300;
+  padding: $paddingSmall;
+  margin: $marginMedium auto;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  //   border-bottom: 3px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  height: $sizeXXL;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #55c57a;
+  }
+
+  &:focus:invalid {
+    border-bottom: 1px solid #eecc2d;
+  }
+}
+label {
+  margin-bottom: 120px;
+}

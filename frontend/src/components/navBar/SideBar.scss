@@ -1,0 +1,92 @@
+@import "../../variables/vars";
+
+.sideBarContainer {
+  background-color: rgb(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 58px;
+  z-index: 100;
+  &.hidden {
+    width: 0%;
+    background-color: transparent;
+  }
+  @include devices(laptop) {
+    display: none;
+  }
+  @include devices(mobile) {
+  }
+}
+.sideBar {
+  position: fixed;
+  width: 80%;
+  //   min-height: 100vh;
+  display: flex;
+  background-color: $mainColorLight;
+  &.hidden {
+    width: 0%;
+    svg {
+      display: none;
+    }
+    p {
+      display: none;
+    }
+    ul {
+      display: none;
+    }
+  }
+  &.shown {
+    // width: 80%;
+    transition: width 0.25s;
+    display: flex;
+    height: 100%;
+  }
+
+  // .sideBar__item
+
+  &__item {
+    padding: $paddingMedium;
+    width: 100%;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: $sizeSmall;
+    }
+    svg {
+      width: 40px;
+      height: 40px;
+      path {
+        stroke: $mainColorLightTransparent;
+      }
+    }
+  }
+
+  // .sideBar__item-links
+
+  &__item-links {
+    li {
+      border: 1px solid $mainColorLightTransparent;
+      border-radius: 8px;
+      padding: $paddingSmall;
+      a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: $sizeXS;
+        color: $textColorLight;
+        p {
+          color: $textColorLight;
+        }
+      }
+    }
+  }
+
+  // .sideBar__item-profile
+
+  &__item-profile {
+  }
+}
+.flex-grow {
+  flex-grow: 1;
+}

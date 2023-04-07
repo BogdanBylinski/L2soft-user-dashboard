@@ -1,0 +1,242 @@
+@import "../../variables/vars";
+.emailContainer {
+  padding: $paddingMedium;
+  border-radius: 8px;
+  background-color: $mainColorLight;
+  flex-grow: 1;
+  // .emailContainer__title
+
+  &__title {
+  }
+
+  // .emailContainer__form
+
+  &__form {
+    // padding: $sizeLarge 0;
+    form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: $sizeSmall;
+      @include devices(smallLaptop) {
+        flex-direction: column;
+        gap: 0;
+      }
+      @include devices(tablet) {
+        flex-direction: column;
+        gap: 0;
+      }
+      @include devices(mobile) {
+      }
+      .form-group {
+        // max-width: 80%;
+        // min-width: 100%;
+        width: 100%;
+        position: relative;
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+          &:focus + label {
+            //   transform: translate(0%, -100%);
+            display: none;
+          }
+          &:not(:placeholder-shown) + label {
+            //   transform: translate(0%, -100%);
+            display: none;
+          }
+          &:placeholder-shown + label {
+            display: block;
+          }
+          &:-webkit-autofill + label,
+          &:-webkit-autofill:hover + label,
+          &:-webkit-autofill:focus + label {
+            display: none;
+          }
+        }
+
+        label {
+          padding: 0 $sizeXS;
+          position: absolute;
+          background-color: $mainColorLight;
+          top: 0;
+          left: 0;
+          font-size: $sizeXS;
+          transform: translate(30px, 75%);
+          color: rgba(255, 255, 255, 0.625);
+        }
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        min-width: 100px;
+        height: $sizeXXL;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+        box-sizing: border-box;
+        flex-shrink: 0;
+        position: relative;
+        padding: 10px 20px;
+        border-radius: 7px;
+        line-height: 18px;
+        color: #000;
+        outline: 0 !important;
+        font-weight: 700;
+        border: 1px solid #e77418;
+        @include devices(smallLaptop) {
+          width: 100%;
+        }
+        @include devices(tablet) {
+          width: 100%;
+        }
+        @include devices(mobile) {
+        }
+        &:hover {
+          background: 0 0;
+          border: 1px solid #e77418;
+          color: #fff;
+          font-weight: 400;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  // .emailContainer__emailsList
+
+  &__emailsList {
+    display: flex;
+    flex-direction: column;
+    gap: $sizeSmall;
+    @include devices(smallLaptop) {
+      margin-top: $sizeSmall;
+    }
+    @include devices(tablet) {
+    }
+    @include devices(mobile) {
+    }
+  }
+
+  // .emailContainer__emailsList-item
+
+  &__emailsList-item {
+    width: 100%;
+    .emailLine {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      &__email {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      input {
+        width: 50%;
+        padding: 0 20px;
+        margin: 0;
+      }
+      &__status {
+        display: flex;
+        align-items: center;
+        svg.confirmed,
+        svg {
+          width: 40px;
+          height: 40px;
+          path {
+            stroke: #55c57a;
+          }
+        }
+        svg.notConfirmed {
+          path {
+            stroke: crimson;
+          }
+        }
+      }
+    }
+  }
+}
+.emailLine {
+  // .emailLine__email
+
+  &__email {
+  }
+
+  // .emailLine__status
+
+  &__status {
+  }
+
+  // .emailLine__buttons
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    // .emailLine__buttons-resend
+
+    &-resend,
+    // &-delete {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   text-decoration: none;
+    //   width: 30px;
+    //   height: 30px;
+    //   font-size: 15px;
+    //   letter-spacing: 0.5px;
+    //   text-transform: uppercase;
+    //   background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+    //   box-sizing: border-box;
+    //   flex-shrink: 0;
+    //   position: relative;
+    //   // padding: 10px 20px;
+    //   border-radius: 7px;
+    //   line-height: 18px;
+    //   color: #000;
+    //   outline: 0 !important;
+    //   font-weight: 700;
+    //   border: 1px solid #e77418;
+    //   & svg {
+    //     width: 20px;
+    //     height: 20px;
+    //     path {
+    //       stroke: black;
+    //     }
+    //   }
+    //   @include devices(smallLaptop) {
+    //   }
+    //   @include devices(tablet) {
+    //   }
+    //   @include devices(mobile) {
+    //   }
+    //   &:hover {
+    //     background: 0 0;
+    //     border: 1px solid #e77418;
+    //     color: #fff;
+    //     font-weight: 400;
+    //     cursor: pointer;
+    //     & svg {
+    //       width: 20px;
+    //       height: 20px;
+    //       path {
+    //         stroke: white;
+    //       }
+    //     }
+    //   }
+    // }
+    &-resend {
+      font-size: $sizeXS;
+      p {
+        color: black;
+      }
+    }
+  }
+}

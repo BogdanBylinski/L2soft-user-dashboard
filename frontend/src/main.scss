@@ -1,0 +1,36 @@
+@import "./variables//vars";
+body,
+html,
+body * {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  box-sizing: border-box;
+  font-family: Nunito Sans, sans-serif;
+  // background-color: $mainColor;
+  color: white;
+}
+.app {
+  display: flex;
+  max-width: 100vw;
+  min-height: 100vh;
+  background-color: $mainColor;
+  flex-direction: row;
+
+  @include devices(tablet) {
+    flex-direction: column;
+  }
+  @include devices(mobile) {
+  }
+}
+main {
+  width: 100%;
+}
+.toastifyFontColor {
+  color: black !important;
+}
+.Toastify__toast-body {
+  div {
+    color: gray !important;
+  }
+}

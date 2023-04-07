@@ -1,0 +1,17 @@
+@import "../../variables/vars";
+.emailSentContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  gap: $sizeSmall;
+  @include devices(tablet) {
+    align-self: center;
+    justify-self: center;
+    margin: auto 0;
+    padding: $sizeSmall;
+  }
+  @include devices(mobile) {
+  }
+}

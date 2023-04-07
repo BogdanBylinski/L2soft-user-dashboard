@@ -1,0 +1,161 @@
+@import "../../variables/vars";
+.popup-overlay {
+  background-color: rgba(0, 0, 0, 0.44);
+}
+.button {
+  border: none;
+  background: none;
+}
+.modal {
+  font-size: 12px;
+  min-width: 300px;
+  background-color: $mainColorLight;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: $sizeLarge;
+  padding: $sizeSmall;
+  padding-bottom: $sizeXS;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+  text-align: center;
+  font-size: $sizeSmall;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: auto;
+  text-align: center;
+  button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 50%;
+    min-height: 30px;
+    font-size: $sizeSmall;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: relative;
+    padding: 0 12px;
+    // padding: 10px 20px;
+    border-radius: 4px;
+    line-height: 18px;
+    color: #000;
+    font-weight: 700;
+    border: 1px solid #e77418;
+    & svg {
+      width: 20px;
+      height: 20px;
+      path {
+        stroke: black;
+      }
+    }
+    @include devices(smallLaptop) {
+    }
+    @include devices(tablet) {
+      font-size: $sizeXS;
+    }
+    @include devices(mobile) {
+    }
+    &:hover {
+      background: 0 0;
+      border: 1px solid #e77418;
+      color: #fff;
+      font-weight: 400;
+      cursor: pointer;
+      & svg {
+        width: 20px;
+        height: 20px;
+        path {
+          stroke: white;
+        }
+      }
+    }
+  }
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+  border-radius: 18px;
+  color: black;
+  border: 1px solid #e77418;
+  &:hover {
+    background: $mainColorLight;
+    border: 1px solid #e77418;
+    color: #fff;
+  }
+}
+.popup-delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: relative;
+  // padding: 10px 20px;
+  border-radius: 7px;
+  line-height: 18px;
+  color: #000;
+  outline: 0 !important;
+  font-weight: 700;
+  border: 1px solid #e77418;
+  & svg {
+    width: 20px;
+    height: 20px;
+    path {
+      stroke: black;
+    }
+  }
+  @include devices(smallLaptop) {
+  }
+  @include devices(tablet) {
+  }
+  @include devices(mobile) {
+  }
+  &:hover {
+    background: 0 0;
+    border: 1px solid #e77418;
+    color: #fff;
+    font-weight: 400;
+    cursor: pointer;
+    & svg {
+      width: 20px;
+      height: 20px;
+      path {
+        stroke: white;
+      }
+    }
+  }
+}

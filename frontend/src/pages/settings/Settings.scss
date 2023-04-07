@@ -1,0 +1,19 @@
+@import "../../variables/vars";
+.homeContainer {
+  // .loginContainer__logo
+  width: 100%;
+
+  display: flex;
+  background-color: $mainColor;
+  padding: 60px 30px;
+  gap: $sizeSmall;
+  @include devices(smallLaptop) {
+    flex-direction: column;
+  }
+  @include devices(tablet) {
+    flex-direction: column;
+    padding: 80px 15px;
+  }
+  @include devices(mobile) {
+  }
+}

@@ -1,0 +1,100 @@
+@import "../../variables/vars";
+.loginWithCodeContainer {
+  margin: 0 auto;
+  max-width: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  @include devices(tablet) {
+    margin: auto 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: $sizeSmall;
+  }
+  @include devices(mobile) {
+  }
+}
+.loginWithCodeRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid $mainColorLightTransparent;
+  border-radius: 8px;
+  padding: $paddingMedium;
+  & span {
+    font-size: $fontSizeMedium;
+    background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+  &__form {
+    width: 100%;
+
+    &-otpInputs {
+      display: flex;
+      gap: $sizeXXS;
+      @include devices(tablet) {
+        width: 100%;
+      }
+      @include devices(mobile) {
+      }
+      input {
+        width: 50px;
+        height: 60px;
+        text-align: center;
+        font-size: $fontSizeLarge;
+        &:not(:placeholder-shown) {
+          border-color: #55c57a;
+        }
+        @include devices(tablet) {
+        }
+        @include devices(mobile) {
+          border-radius: 4px;
+          width: 40px;
+          height: 45px;
+        }
+      }
+    }
+    & button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      min-width: 100%;
+      min-height: $sizeXXL;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      background: #e77418;
+      background: linear-gradient(0deg, #e77418 0, #eecc2d 90%);
+      box-sizing: border-box;
+      flex-shrink: 0;
+      position: relative;
+      padding: 10px 20px;
+      border-radius: 7px;
+      line-height: 18px;
+      color: #000;
+      outline: 0 !important;
+      font-weight: 700;
+      border: 1px solid #e77418;
+      margin-bottom: $sizeXL;
+      &:hover {
+        background: 0 0;
+        border: 1px solid #e77418;
+        color: #fff;
+        font-weight: 400;
+        cursor: pointer;
+      }
+    }
+    &-resend {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

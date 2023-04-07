@@ -1,0 +1,271 @@
+@import "../../variables/vars";
+
+.navBarContainer {
+}
+.navBar {
+  z-index: 100;
+  padding: $paddingSmall;
+  width: 230px;
+  position: relative;
+  background-color: $mainColorLight;
+  display: flex;
+  flex-direction: column;
+  gap: $sizeLarge;
+  border-right: 1px solid $mainColorLightTransparent;
+  @include devices(tablet) {
+    border: none;
+    width: 100%;
+    padding: 10px;
+    height: 60px;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+  }
+  @include devices(mobile) {
+  }
+  &__slider {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, -400%);
+    button {
+      background-color: $mainColorLight;
+      border: 1px solid $mainColorLightTransparent;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      svg {
+        width: 15px;
+        height: 15px;
+        path {
+          fill: $textColorLight;
+        }
+      }
+    }
+  }
+  hr {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    margin: $sizeXS 0;
+  }
+  &__item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: $sizeSmall;
+  }
+
+  // .navBar__item-header
+
+  &__item-header {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 0;
+    img {
+      width: 40px;
+      height: 40px;
+      @include devices(tablet) {
+        width: 40px;
+        height: 40px;
+      }
+      @include devices(mobile) {
+      }
+    }
+  }
+
+  // .navBar__item-links
+
+  &__item-links {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    @include devices(tablet) {
+      display: none;
+    }
+    @include devices(mobile) {
+    }
+    ul {
+      width: 100%;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: $sizeXS;
+      align-items: center;
+
+      li {
+        width: 100%;
+        height: 50px;
+        &:has(.active) {
+          border-radius: 8px;
+          border: 1px solid $mainColorLightTransparent;
+        }
+        &:hover {
+          border: 1px solid $mainColorLightTransparent;
+          border-radius: 8px;
+        }
+        a {
+          display: flex;
+          gap: $sizeXS;
+          width: 100%;
+          height: 100%;
+          color: $textColorLight;
+          padding: $paddingSmall;
+          align-items: center;
+
+          text-decoration: none;
+          &.active {
+            width: 100%;
+            p {
+              color: $whiteColor;
+            }
+            path {
+              //   fill: $whiteColor;
+              stroke: $whiteColor;
+              stroke-width: 0.4;
+            }
+          }
+
+          &:visited {
+            text-decoration: none;
+            color: $textColorLight;
+          }
+          svg {
+            background-color: transparent;
+            width: 30px;
+            height: 30px;
+            path {
+              //   fill: $whiteColor;
+              stroke: $textColorLight;
+              stroke-width: 0.6;
+            }
+          }
+          p {
+            color: $textColorLight;
+          }
+        }
+      }
+    }
+  }
+
+  // .navBar__item-profile
+
+  &__item-profile {
+    color: $textColorLight;
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid $mainColorLightTransparent;
+    width: 100%;
+
+    @include devices(tablet) {
+      justify-content: center;
+      width: 50px;
+      display: none;
+    }
+    @include devices(mobile) {
+    }
+    button {
+      padding: $paddingSmall;
+
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      gap: $sizeXS;
+      &:hover {
+      }
+      cursor: pointer;
+      svg {
+        height: 15px;
+        width: 15px;
+      }
+      p {
+        color: $textColorLight;
+      }
+      @include devices(tablet) {
+        width: 50px;
+        p {
+          display: none;
+        }
+      }
+      @include devices(mobile) {
+      }
+    }
+  }
+  &__item-burger {
+    color: $textColorLight;
+    border-radius: 8px;
+    border: 1px solid $mainColorLightTransparent;
+    width: 100%;
+    gap: $sizeSmall;
+    @include devices(laptop) {
+      display: none;
+    }
+    @include devices(tablet) {
+      display: flex;
+      justify-content: center;
+      width: 50px;
+    }
+    @include devices(mobile) {
+    }
+    button {
+      padding: $paddingSmall;
+
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      gap: $sizeXS;
+      p {
+        display: none;
+      }
+      &:hover {
+      }
+      cursor: pointer;
+      svg {
+        width: 20px;
+        height: 20px;
+        color: red;
+        fill: $mainColorLightTransparent;
+        stroke-width: 1;
+        stroke: $mainColorLightTransparent;
+      }
+    }
+  }
+  &.small {
+    width: 80px;
+    transition: width 0.3s;
+    font-size: 0;
+    top: -1px;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    p {
+      display: none;
+      opacity: 0;
+    }
+    a {
+      justify-content: center;
+      align-items: center;
+    }
+    @include devices(tablet) {
+      width: 100%;
+    }
+    @include devices(mobile) {
+    }
+  }
+  &.opened {
+    font-size: $sizeSmall;
+    transition: width 0.5s, font-size 0.5s;
+  }
+}
+.flex-grow {
+  flex-grow: 1;
+}

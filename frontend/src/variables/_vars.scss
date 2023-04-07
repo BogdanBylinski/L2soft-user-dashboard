@@ -1,0 +1,108 @@
+// @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+//font-family: "Jost", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+$mainColor: #1a1b1e;
+$whiteColor: white;
+$mainColorLight: #202126;
+$mainColorLightTransparent: rgba(255, 255, 255, 0.2);
+
+$blackColor: #1d1c1e;
+$darkGreycolor: #333136;
+$lightGreyColor: #f1f3f5;
+$fontSizeSmall: 16px;
+$fontSizeMedium: 24px;
+$fontSizeLarge: 32px;
+$fontSizeXL: 40px;
+$fontSizeXXL: 48px;
+$paddingSmall: 10px;
+$paddingMedium: 20px;
+$paddingLarge: 30px;
+$marginSmall: 10px;
+$marginMedium: 20px;
+$marginLarge: 30px;
+$sizeXXS: 8px;
+$sizeXS: 12px;
+$sizeSmall: 16px;
+$sizeMedium: 24px;
+$sizeLarge: 32px;
+$sizeXL: 40px;
+$sizeXXL: 48px;
+$textColorLight: rgba(255, 255, 255, 0.625);
+@mixin devices($breakpoint) {
+  //the name of the mixin is devices
+
+  @if $breakpoint == smallLaptop {
+    @media only screen and (min-width: 768px) and (max-width: 1111px) {
+      @content;
+    }
+  }
+  @if $breakpoint == laptop {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 576px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobileS {
+    @media only screen and (max-width: 376px) {
+      @content;
+    }
+  }
+}
+h1 {
+  //   font-family: "Jost", sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  @include devices(tablet) {
+    font-size: 32px;
+  }
+  @include devices(mobile) {
+  }
+}
+h2 {
+  //   font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+
+  @include devices(tablet) {
+    font-size: 28px;
+  }
+  @include devices(mobile) {
+  }
+}
+h4 {
+  //   font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+
+  @include devices(tablet) {
+  }
+  @include devices(mobile) {
+  }
+}
+h3 {
+  //   font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  @include devices(tablet) {
+  }
+  @include devices(mobile) {
+  }
+}
+@include devices(tablet) {
+}
+@include devices(mobile) {
+}
